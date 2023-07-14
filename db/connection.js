@@ -8,7 +8,7 @@ if (isProduction) {
         dialect: "mysql"
     });
 } else {
-    sequelize = new Sequelize("user_app_example", "root", "", {
+    sequelize = new Sequelize("travel_circle_app", "root", "", {
         host: "localhost",
         dialect: "mysql"
     });
