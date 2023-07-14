@@ -1,0 +1,10 @@
+<h1>See What Others Are Thinking</h1>
+
+<ul>
+    {{#each thoughts}}
+        <li>
+            <p>{{text}}</p>
+            <p>Added By: {{user.email}}</p>
+        </li>
+    {{/each}}
+</ul>

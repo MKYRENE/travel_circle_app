@@ -1,0 +1,86 @@
+:root {
+    --myPurple: #301934;
+    --myPurpleLight: #30193475;
+    --white: #fff;
+}
+
+body {
+    padding: 5%;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: var(--myPurple);
+    color: var(--white);
+    border-radius: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+nav p {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 6px 10px;
+    color: var(--myPurple);
+    border: 1px solid var(--myPurple);
+    border-radius: 3px;
+}
+
+nav a:not(:last-child) {
+    margin-right: 15px;
+}
+
+nav a.active,
+nav a:hover {
+    background-color: var(--myPurple);
+    color: var(--white);
+}
+
+form {
+    background-color: #30193475;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+form>* {
+    padding: 7px 10px;
+    margin: 3px 0;
+}
+
+form h1 {
+    text-align: center;
+}
+
+form button {
+    width: fit-content;
+    align-self: center;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li p {
+    margin: 4px;
+}
