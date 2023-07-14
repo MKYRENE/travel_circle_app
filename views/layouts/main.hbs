@@ -13,19 +13,18 @@
         <h3>Travel Circle</h3>
         <nav>
             {{#if email}}
+                {{!-- This edits navbar on Dashboard.. --}}
                 <p>Welcome, {{email}}!</p>
-                <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
+                <a href="/feed" class="{{#if isFeed}}active{{/if}}">Feed</a>
                 <a href="/dashboard" class="{{#if isDashboard}}active{{/if}}">Dashboard</a>
+                <a href="/about" class="{{#if isAbout}}active{{/if}}">About</a>
                 <a href="/logout">Log Out</a>
                 {{else}}
-                    {{#if isLoggedIn}}
-                        <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
-                        <a href="/dashboard" class="{{#if isDashboard}}active{{/if}}">Dashboard</a>
-                        {{else}}
-                            <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
-                            <a href="/login" class="{{#if isLogin}}active{{/if}}">Login</a>
-                            <a href="/register" class="{{#if isRegister}}active{{/if}}">Register</a>
-                    {{/if}}
+                    {{!-- This edits navbar on home page. --}}
+                    <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
+                    <a href="/login" class="{{#if isDashboard}}active{{/if}}">Login/Sign Up</a>
+                    <a href="/about" class="{{#if isAbout}}active{{/if}}">About</a>
+
             {{/if}}
         </nav>
     </header>

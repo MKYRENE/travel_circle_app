@@ -25,16 +25,6 @@ User.init({
     modelName: "user",
     hooks: {
         async beforeCreate(user) {
-            // This is a manual promise return:
-            // return new Promise((resolve, reject) => {
-            //     hash(user.password, 10, (err, hashPassword) => {
-            //         if (err) reject(err);
-            //         user.password = hashPassword;
-            //         resolve(user);
-            //     });
-            // });
-
-            // This is an async await:
             const hashPassword = await hash(user.password, 10);
 
             user.password = hashPassword;
