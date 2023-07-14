@@ -1,0 +1,15 @@
+<h1>Dashboard</h1>
+
+<form action="/thought" method="POST">
+    <input name="text" type="text" placeholder="What are you thinking?">
+    <button>Share</button>
+</form>
+
+
+<main class="thoughts">
+    {{#each thoughts}}
+        <div class="thought">
+            <p>{{text}}</p>
+        </div>
+    {{/each}}
+</main>
