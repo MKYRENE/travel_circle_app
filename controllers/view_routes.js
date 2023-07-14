@@ -6,11 +6,12 @@ const Thought = require("../models/Thought");
 function isAuthenticated(req, res, next) {
     const isAuthenticated = req.session.user_id;
 
-    if (!isAuthenticated) return res.redirect("/login");
+    if (!isAuthenticated) return res.redirect("/");
 
     next();
 }
 
+// PUBLIC ROUTES
 // Show Homepage
 router.get("/", async (req, res) => {
     let thoughts = await Thought.findAll({
@@ -22,16 +23,15 @@ router.get("/", async (req, res) => {
     res.render("index", {
         isHome: true,
         isLoggedIn: req.session.user_id,
-        thoughts: thoughts
     });
 });
 
-// Show Feed Page
-router.get("/feed", (req, res) => {
-    if (req.session.user_id) return res.redirect("/feed");
+// Show Login Page
+router.get("/login", (req, res) => {
+    if (req.session.user_id) return res.redirect("/dashboard");
 
-    res.render("Feed", {
-        isFeed: true
+    res.render("login", {
+        isLogin: true
     });
 });
 
@@ -41,6 +41,24 @@ router.get("/register", (req, res) => {
 
     res.render("register", {
         isRegister: true
+    });
+});
+
+// PRIVATE ROUTES
+// Show Feed Page
+router.get("/feed", isAuthenticated, async (req, res) => {
+
+    const user = await User.findByPk(req.session.user_id, {
+        include: Thought
+    });
+
+    const thoughts = user.thoughts.map(t => t.get({ plain: true }));
+
+    // The user IS logged in
+    res.render("feed", {
+        isFeed: true,
+        email: user.email,
+        thoughts: thoughts
     });
 });
 
