@@ -1,16 +1,21 @@
 const router = require("express").Router();
+const { hash } = require("bcrypt");
 const User = require("../models/User");
 
 
 // Log in user
 router.post("/login", async (req, res) => {
     try {
-        const formEmail = req.body.email;
+        if (req.session.user_id) {
+            return res.redirect("/dashboard");
+        }
+
+        const formUsername = req.body.username;
         const formPassword = req.body.password;
 
         const user = await User.findOne({
             where: {
-                email: formEmail
+                username: formUsername
             }
         });
 
@@ -37,10 +42,40 @@ router.post("/login", async (req, res) => {
 // Register user
 router.post("/register", async (req, res) => {
     try {
-        const newUser = await User.create(req.body);
+        const { firstName, lastName, username, email, password } = req.body;
+
+        // Check is username is already registered
+        const existingUsername = await User.findOne({
+            where: {
+                username: username,
+            }
+        });
+
+        // Check if email is already registered
+        const existingEmail = await User.findOne({
+            where: {
+                email: email,
+            }
+        });
+
+        // If username or email already registered, return error
+        if (existingUsername || existingEmail) {
+            return res.status(409).json({ error: "Username or email already registered."});
+        }
+
+        // Has password before saving to db
+        const hashPassword = await hash(password, 10);
+
+        const newUser = await User.create({
+            firstName,
+            lastName,
+            username,
+            email,
+            password: hashPassword,
+        });
 
         // Creates a session and sends a cookie to the client
-        req.session_user_id = newUser.id;
+        req.session.user_id = newUser.id;
 
         res.redirect("/dashboard");
     } catch (err) {

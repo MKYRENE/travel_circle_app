@@ -21,7 +21,7 @@
         <nav>
             {{#if isLoggedIn}}
                 {{!-- This edits navbar on Dashboard. --}}
-                <p>Welcome, {{email}}!</p>
+                <p>Welcome, {{firstName}}!</p>
                 <a href="/feed" class="{{#if isFeed}}active{{/if}}">Feed</a>
                 <a href="/dashboard" class="{{#if isDashboard}}active{{/if}}">Dashboard</a>
                 <a href="/about" class="{{#if isAbout}}active{{/if}}">About Us</a>
