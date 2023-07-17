@@ -12,7 +12,7 @@
     <header>
         <h3>Travel Circle</h3>
         <nav>
-            {{#if email}}
+            {{#if isLoggedIn}}
                 {{!-- This edits navbar on Dashboard.. --}}
                 <p>Welcome, {{email}}!</p>
                 <a href="/feed" class="{{#if isFeed}}active{{/if}}">Feed</a>
