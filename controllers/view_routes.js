@@ -44,6 +44,15 @@ router.get("/register", (req, res) => {
     });
 });
 
+// Show About Page
+router.get("/about", (req, res) => {
+    if (req.session.user_id) return res.redirect("/dashboard");
+
+    res.render("about", {
+        isAbout: true
+    });
+});
+
 // PRIVATE ROUTES
 // Show Feed Page
 router.get("/feed", isAuthenticated, async (req, res) => {
