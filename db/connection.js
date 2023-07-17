@@ -8,7 +8,7 @@ if (isProduction) {
         dialect: "mysql"
     });
 } else {
-    sequelize = new Sequelize("travel_circle_app", "root", "", {
+    sequelize = new Sequelize("travel_circle_app", "root", process.env.DB_PASS, {
         host: "127.0.0.1",
         dialect: "mysql"
     });
