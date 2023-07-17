@@ -6,6 +6,24 @@ const Thought = require("./Thought");
 class User extends Model { }
 
 User.init({
+    firstName: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+            min: 3,
+        }
+    },
+    lastName: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+            min: 3,
+        }
+    },
     username: {
         type: DataTypes.STRING,
         unique: true,
