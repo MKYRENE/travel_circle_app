@@ -8,16 +8,14 @@ class User extends Model { }
 User.init({
     firstName: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false,
         validate: {
             notEmpty: true,
-            min: 3,
+            min: 2,
         }
     },
     lastName: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false,
         validate: {
             notEmpty: true,
