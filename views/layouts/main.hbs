@@ -18,14 +18,13 @@
                 <p>Welcome, {{email}}!</p>
                 <a href="/feed" class="{{#if isFeed}}active{{/if}}">Feed</a>
                 <a href="/dashboard" class="{{#if isDashboard}}active{{/if}}">Dashboard</a>
-                <a href="/about" class="{{#if isAbout}}active{{/if}}">About</a>
+                <a href="/about" class="{{#if isAbout}}active{{/if}}">About Us</a>
                 <a href="/logout">Log Out</a>
                 {{else}}
                     {{!-- This edits navbar on home page. --}}
                     <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
+                    <a href="/about" class="{{#if isAbout}}active{{/if}}">About Us</a>
                     <a href="/login" class="{{#if isDashboard}}active{{/if}}">Login/Sign Up</a>
-                    <a href="/about" class="{{#if isAbout}}active{{/if}}">About</a>
-
             {{/if}}
         </nav>
     </header>
