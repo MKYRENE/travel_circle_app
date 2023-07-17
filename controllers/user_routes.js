@@ -30,6 +30,9 @@ router.post("/login", async (req, res) => {
         // User has been validated and now we log the user in by creating a session
         req.session.user_id = user.id;
 
+        // Give user's firstName so we can say "Welcome, [firstName]!" instead of "Welcome, [email]!"
+        req.session.user_id = user.firstName;
+
         res.redirect("/dashboard");
 
     } catch(err) {
