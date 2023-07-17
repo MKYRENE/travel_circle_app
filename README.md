@@ -1,5 +1,5 @@
 # Travel Circle
-Travel Share: Connect, collaborate, and share your travel experiences with fellow adventurers around the world.
+Travel Circle: Connect, collaborate, and share your travel experiences with fellow adventurers around the world.
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
@@ -49,5 +49,5 @@ If you have any questions or need further assistance, please feel free to contac
 - Daniel Cohen: dzcsix@gmail.com
 - J.P. King: jp.king.1337@gmail.com
 - Michael R. Rodriguez: mkyrenee.dev@gmail.com
-- Ryan Wysocki: ryan.wysocki78@gmail.com
-You can also visit the [GitHub repository](https://github.com/yourusername/travel-circle) for this project.
+- Ryan Wysocki: ryan.wysocki78@gmail.com 
+<p>You can also visit the [GitHub repository](https://github.com/yourusername/travel-circle) for this project.</p>
