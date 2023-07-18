@@ -208,3 +208,44 @@ ul li p {
 .team-info {
     color: white;
 }
+
+.footer-container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .footer-logo {
+    background-image: url('/assets/photos/earth.png');
+    background-size: cover;
+    width: 100px;
+    height: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .footer-social a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .footer-bottom p {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    margin: 10px 0;
+  }
+  
