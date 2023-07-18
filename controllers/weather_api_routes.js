@@ -1,3 +1,4 @@
+const axios = require("axios");
 const router = require("express").Router();
 
 
@@ -11,20 +12,32 @@ const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeUR
 const weatherInfoEl = document.getElementById("weather-info");
 const weatherIconEl = document.getElementById("weather-icon");
 
-function fetchWeatherData(location) {
-    fetch(weatherUrl)
-        .then((response) => response.json())
-        .then((weatherData) => {
-            weatherIconEl.innerHTML = `<img src="https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png" alt="Weather Icon">`;
-            weatherInfoEl.innerHTML = `
-            <p>Location: ${weatherData.name}</p>
-            <p>Date: ${weatherData.date}</p>
-            <p>Temperature: ${weatherData.main.temp}</p>
-            <p>Humidity: ${weatherData.main.humidity}</p>
-            <p>Wind Speed: ${weatherData.wind.speed}</p>
-            `;
-        })
-        .catch((error) => console.error("Error:", error));
-}
+
+router.get("/weather", async (req, res) => {
+    const { location, date } = req.query;
+
+    try {
+        if (!location || !date) {
+            return res.status(400).json({ error: "Location and date are required." })
+        }
+
+        const response = await axios.get(weatherUrl);
+        const weatherData = response.data;
+
+        const formattedWeatherData = {
+            location: weatherData.name,
+            date: new Date(weatherData.dt * 1000).toISOString().slice(0, 10),
+            temperature: weatherData.main.temp,
+            humidity: weatherData.main.humidity,
+            wind_speed: weatherData.wind.speed,
+            weather_icon: `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`,
+        };
+
+        res.json(formattedWeatherData);
+    } catch (error) {
+        console.error("Error fetching weather data:", error.message);
+        res.status(500).json({ error: "Internal Server Error - please contact the developers to fix." })
+    }
+});
 
 module.exports = router;
