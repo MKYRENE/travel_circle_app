@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const db = require("../db/connection");
 
-class Thought extends Model {}
+class Post extends Model {}
 
-Thought.init({
+Post.init({
     text: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -13,7 +13,7 @@ Thought.init({
     }
 }, {
     sequelize: db,
-    modelName: "thought"
+    modelName: "post"
 });
 
-module.exports = Thought;
+module.exports = Post;
