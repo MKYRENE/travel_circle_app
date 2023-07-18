@@ -7,10 +7,8 @@ const location = "London";
 const date = "2023-07-18";
 
 // This is for the function
-const apiKey = WEATHER_API_KEY;
+const apiKey = process.env.WEATHER_API_KEY;
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(location)}&dt=${new Date(date).getTime() / 1000}&units=imperial&appid=${apiKey}`;
-const weatherInfoEl = document.getElementById("weather-info");
-const weatherIconEl = document.getElementById("weather-icon");
 
 
 router.get("/weather", async (req, res) => {

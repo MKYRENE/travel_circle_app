@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const Thought = require("../models/Thought");
+const Post = require("../models/Post");
 
 // Custom Middleware
 function isAuthenticated(req, res, next) {
@@ -11,9 +11,9 @@ function isAuthenticated(req, res, next) {
     next();
 }
 
-// Add a thought
-router.post("/thought", isAuthenticated, async (req, res) => {
-    await Thought.create({
+// Add a post
+router.post("/post", isAuthenticated, async (req, res) => {
+    await Post.create({
         text: req.body.text,
         userId: req.session.user_id
     });

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-$(function () {
+(function () {
     var mapBoxKey = MAP_API_KEY
 
 
