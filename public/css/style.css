@@ -97,7 +97,40 @@ ul li p {
     font-weight: 300;
     font-family: 'Oswald', sans-serif;
     font-family: 'Roboto', sans-serif;
+    padding-left: 200px;
+    padding-right: 200px;
 }
+
+.login-container {
+    margin-top: 75px;
+}
+
+.about-container {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.team-container {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.col {
+    padding-top: 0%;
+    padding-bottom: 1rem;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#team-info {
+    color: #30193475;
+    font-weight: 300;
+  }
 
 .globe img {
     width: 50px;
