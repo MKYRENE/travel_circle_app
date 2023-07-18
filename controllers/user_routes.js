@@ -61,9 +61,14 @@ router.post("/register", async (req, res) => {
             }
         });
 
-        // If username or email already registered, return error
-        if (existingUsername || existingEmail) {
-            return res.render("register", { error: "Username or email already registered. Please try a new username or email, or log in!"});
+        // If username already registered, return error
+        if (existingUsername) {
+            return res.render("register", { error: "That username is taken! Please log in if you have an account, or register with a different username."});
+        }
+
+        // If email already registered, return error
+        if (existingEmail) {
+            return res.render("register", { error: "That email is taken! Please log in if you have an account, or register with a different email."});
         }
 
         // Has password before saving to db
