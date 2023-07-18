@@ -11,9 +11,12 @@ const db = require("./db/connection");
 
 // Import routes
 const api_routes = require("./controllers/api_routes");
-const view_routes = require("./controllers/view_routes");
+const map_api_routes = require("./controllers/map_api");
+const post_routes = require("./controllers/post_routes");
 const user_routes = require("./controllers/user_routes");
-const thought_routes = require("./controllers/post_routes");
+const view_routes = require("./controllers/view_routes");
+const weather_api_routes = require("./controllers/weather_api_routes");
+
 
 const app = express();
 const PORT = process.env.PORT || 3333;
@@ -44,10 +47,10 @@ app.use(session({
 }));
 
 // Load Routes
-app.use("/", [api_routes, view_routes, user_routes, thought_routes]);
+app.use("/", [api_routes, map_api_routes, post_routes, user_routes, view_routes, weather_api_routes]);
 
 // Connect to the db and create all tables based off of our models
-db.sync({ force: true })
+db.sync({ force: false })
     .then(() => {
         // Start server
         app.listen(PORT, () => console.log("Server started on port %s", PORT));
