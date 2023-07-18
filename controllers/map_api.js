@@ -2,68 +2,61 @@ const router = require("express").Router();
 
 (function () {
     var mapBoxKey = MAP_API_KEY
-    
-  
+
+
     // Initialize the map
     mapboxgl.accessToken = mapBoxKey;
     var map = new mapboxgl.Map({
-      container: "map",
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: [-95.7129, 37.0902], // Set the initial center of the map
-      zoom: 3, // Set the initial zoom level of the map
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-95.7129, 37.0902], // Set the initial center of the map
+        zoom: 3, // Set the initial zoom level of the map
     });
-  
+
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav, "top-right");
-  
-    // Store the map markers in an array
-    var markers = [];
-  
-    // Function to add markers to the map
-    function addMarkers(venues) {
-      venues.forEach(function (venue) {
-        var marker = new mapboxgl.Marker()
-          .setLngLat(venue.coordinates.split(","))
-          .addTo(map)
-          .setPopup(
-            new mapboxgl.Popup().setHTML(
-              "<h3><b>" +
-                venue.name +
-                "</b></h3>" +
-                "<p>Date: " +
-                venue.date +
-                "</p>" +
-                "<p>Time: " +
-                venue.time +
-                "</p>" +
-                "<p>Address: " +
-                venue.address +
-                "</p>" +
-                '<p><a href="' +
-                venue.url +
-                '" target="_blank">Event Details</a></p>'
-            )
-          );
-  
-        markers.push(marker);
-      });
-  
-      // Set bounding box to snap map to markers on submit
-      var bounds = new mapboxgl.LngLatBounds();
-      markers.forEach(function (marker) {
-        bounds.extend(marker.getLngLat());
-      });
-      console.log(bounds);
-      map.fitBounds(bounds, { padding: 50 });
+
+
+    // Function to handle search
+    function geocode(query) {
+        var geocoder = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(query) + '.json?access_token=' + mapboxgl.accessToken;
+
+        fetch(geocoder)
+            .then(response => response.json())
+            .then(data => {
+                if (data.features.length > 0) {
+                    var location = data.features[0].center;
+                    map.flyTo({
+                        center: location,
+                        zoom: 14
+                    });
+
+                    // Add a marker at the searched location
+                    var marker = new mapboxgl.Marker().setLngLat(location).addTo(map);
+                } else {
+                    alert('Location not found. Please try a different search term.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
-  
-    // Function to remove markers from the map
-    function removeMarkers() {
-      markers.forEach(function (marker) {
-        marker.remove();
-      });
-      markers = [];
-    }
+
+    // Event listener for search button click
+    document.getElementById('search-button').addEventListener('click', function () {
+        var query = document.getElementById('search-input').value;
+        geocode(query);
+    });
+
+    // Event listener for pressing 'Enter' key in the search box
+    document.getElementById('search-input').addEventListener('keyup', function (event) {
+        if (event.key === 'Enter') {
+            var query = document.getElementById('search-input').value;
+            geocode(query);
+        }
+    });
+
+
 });
 
 module.exports = router;
