@@ -97,6 +97,8 @@ ul li p {
     font-weight: 300;
     font-family: 'Oswald', sans-serif;
     font-family: 'Roboto', sans-serif;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 .login-container {
@@ -104,6 +106,13 @@ ul li p {
 }
 
 .about-container {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.team-container {
     padding-top: 2rem;
     padding-bottom: 1rem;
     font-family: 'Oswald', sans-serif;
