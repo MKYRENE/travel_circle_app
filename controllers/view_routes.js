@@ -54,7 +54,8 @@ router.get("/about", async (req, res) => {
     res.render("about", {
         isAbout: true,
         isLoggedIn: req.session.user_id ? true : false, // Works whether user is logged in or not
-        email: user ? user.email : null // If user exists, return user.email, else return null
+        email: user ? user.email : null, // If user exists, return user.email, else return null
+        firstName: user ? user.firstName : null, // If user, return user.firstName, else null
     });
 });
 
@@ -73,7 +74,8 @@ router.get("/feed", isAuthenticated, async (req, res) => {
         isFeed: true,
         isLoggedIn: true, // Adding isLoggedIn as true for logged-in users
         email: user.email,
-        thoughts: thoughts
+        firstName: user.firstName,
+        thoughts: thoughts,
     });
 });
 
@@ -91,7 +93,8 @@ router.get("/dashboard", isAuthenticated, async (req, res) => {
         isDashboard: true,
         isLoggedIn: true, // Adding isLoggedIn as true for logged-in users
         email: user.email,
-        thoughts: thoughts
+        firstName: user.firstName,
+        thoughts: thoughts,
     });
 });
 
