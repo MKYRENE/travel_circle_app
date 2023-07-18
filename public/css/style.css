@@ -4,9 +4,19 @@
     --white: #fff;
 }
 
+body,html {
+    height: 100%;
+}
+
 body {
+    background-image: url(/assets/photos/mouintains.jpg);
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 5%;
 }
+
 
 p {
     margin: 0;
