@@ -4,9 +4,19 @@
     --white: #fff;
 }
 
+body,html {
+    height: 100%;
+}
+
 body {
+    background-image: url(/assets/photos/mouintains.jpg);
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 5%;
 }
+
 
 p {
     margin: 0;
@@ -53,6 +63,10 @@ nav a:hover {
     color: var(--white);
 }
 
+.textBackground {
+    background-color: rgb(0, 151, 108);
+}
+
 form {
     background-color: #30193475;
     width: 400px;
@@ -61,6 +75,7 @@ form {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
+    color: white;
 }
 
 form>* {
@@ -75,6 +90,16 @@ form h1 {
 form button {
     width: fit-content;
     align-self: center;
+}
+
+#create-button {
+    text-decoration: none;
+    color: lightblue;
+}
+
+#create-button:hover {
+    color: lightblue;
+    border-bottom: 1px solid lightblue;
 }
 
 ul li {
@@ -128,9 +153,9 @@ ul li p {
 }
 
 #team-info {
-    color: #30193475;
+    color: #fff;
     font-weight: 300;
-  }
+}
 
 .globe img {
     width: 50px;
