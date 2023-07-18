@@ -17,7 +17,6 @@ body {
     padding: 5%;
 }
 
-
 p {
     margin: 0;
     padding: 0;
@@ -160,4 +159,52 @@ ul li p {
 .globe img {
     width: 50px;
     height: auto;
+}
+
+.container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.p-container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.about-container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.team-container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.team-info {
+    color: white;
 }
