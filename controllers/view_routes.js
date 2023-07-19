@@ -31,7 +31,7 @@ router.get("/login", (req, res) => {
     if (req.session.user_id) return res.redirect("/dashboard");
 
     res.render("login", {
-        isLogin: true,
+        isLoginOrRegister: true,
         isLoggedIn: false, // Adding isLoggedIn as false for non-logged-in users
     });
 });
@@ -41,7 +41,7 @@ router.get("/register", (req, res) => {
     if (req.session.user_id) return res.redirect("/dashboard");
 
     res.render("register", {
-        isRegister: true,
+        isLoginOrRegister: true,
         isLoggedIn: false, // Adding isLoggedIn as false for non-logged-in users
     });
 });

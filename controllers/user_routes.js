@@ -63,7 +63,7 @@ router.post("/register", async (req, res) => {
 
         // If username or email already registered, return error
         if (existingUsername || existingEmail) {
-            return res.status(409).json({ error: "Username or email already registered."});
+            return res.render("register", { error: "Username or email already registered. Please try a new username or email, or log in!"});
         }
 
         // Has password before saving to db
