@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const Thought = require("../models/Thought");
+const Post = require("../models/Post");
 
 // Custom Middleware
 function isAuthenticated(req, res, next) {
@@ -14,11 +14,11 @@ function isAuthenticated(req, res, next) {
 // PUBLIC ROUTES
 // Show Homepage
 router.get("/", async (req, res) => {
-    let thoughts = await Thought.findAll({
+    let posts = await Post.findAll({
         include: User
     });
 
-    thoughts = thoughts.map(t => t.get({ plain: true }));
+    posts = posts.map(t => t.get({ plain: true }));
 
     res.render("index", {
         isHome: true,
@@ -31,7 +31,7 @@ router.get("/login", (req, res) => {
     if (req.session.user_id) return res.redirect("/dashboard");
 
     res.render("login", {
-        isLogin: true,
+        isLoginOrRegister: true,
         isLoggedIn: false, // Adding isLoggedIn as false for non-logged-in users
     });
 });
@@ -41,7 +41,7 @@ router.get("/register", (req, res) => {
     if (req.session.user_id) return res.redirect("/dashboard");
 
     res.render("register", {
-        isRegister: true,
+        isLoginOrRegister: true,
         isLoggedIn: false, // Adding isLoggedIn as false for non-logged-in users
     });
 });
@@ -64,10 +64,10 @@ router.get("/about", async (req, res) => {
 router.get("/feed", isAuthenticated, async (req, res) => {
 
     const user = await User.findByPk(req.session.user_id, {
-        include: Thought
+        include: Post
     });
 
-    const thoughts = user.thoughts.map(t => t.get({ plain: true }));
+    const posts = user.posts.map(t => t.get({ plain: true }));
 
     // The user IS logged in
     res.render("feed", {
@@ -75,7 +75,7 @@ router.get("/feed", isAuthenticated, async (req, res) => {
         isLoggedIn: true, // Adding isLoggedIn as true for logged-in users
         email: user.email,
         firstName: user.firstName,
-        thoughts: thoughts,
+        posts: posts,
     });
 });
 
@@ -83,10 +83,10 @@ router.get("/feed", isAuthenticated, async (req, res) => {
 router.get("/dashboard", isAuthenticated, async (req, res) => {
 
     const user = await User.findByPk(req.session.user_id, {
-        include: Thought
+        include: Post
     });
 
-    const thoughts = user.thoughts.map(t => t.get({ plain: true }));
+    const posts = user.posts.map(t => t.get({ plain: true }));
 
     // The user IS logged in
     res.render("dashboard", {
@@ -94,7 +94,7 @@ router.get("/dashboard", isAuthenticated, async (req, res) => {
         isLoggedIn: true, // Adding isLoggedIn as true for logged-in users
         email: user.email,
         firstName: user.firstName,
-        thoughts: thoughts,
+        posts: posts,
     });
 });
 
