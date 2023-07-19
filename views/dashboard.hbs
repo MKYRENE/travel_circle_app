@@ -1,34 +1,18 @@
-<!-- Main heading for the Dashboard page -->
-<div class="about-container d-flex justify-content-center align-items-center">
-<h1>DASHBOARD</h1>
-</div>
+<h1>Dashboard</h1>
 
-<!-- Form to post new content -->
-<form action="/post" method="POST">
-    <!-- Input field for user to type their thoughts -->
+<form id="postForm">
     <input name="text" type="text" placeholder="What are you thinking?">
-    <!-- Button to submit the post -->
-    <button>Share</button>
+    <input name="date" type="date" placeholder="Date">
+    <input name="location" type="text" placeholder="Location">
+
+    <button type="submit">Share</button>
 </form>
 
-<!-- Main section to display the posts -->
+
 <main class="post">
-    <!-- Loop through each post and display them -->
     {{#each post}}
     <div class="post">
-        <!-- Display the content of each post -->
         <p>{{text}}</p>
     </div>
     {{/each}}
-
 </main>
-
-
-
-
-
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search for a location">
-    <button id="search-button">Search</button>
-</div>
-<div id="map"></div>

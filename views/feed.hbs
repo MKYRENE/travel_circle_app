@@ -5,10 +5,16 @@
 
 <!-- Main section to display the feed -->
 <main class="feed">
-    <!-- Loop through each feed item and display it -->
-    {{#each feed}}
     <div class="map">
         <!-- Display the content of each feed item here -->
+        <!-- Add any additional content for the feed item in this div -->
     </div>
-    {{/each}}
+    <div class="weather">
+        <img src="{{weather_icon}}" alt="Weather Icon">
+        <p>Location: {{location}}</p>
+        <p>Date: {{date}}</p>
+        <p>Temperature: {{temperature}} °F</p>
+        <p>Humidity: {{humidity}} %</p>
+        <p>Wind Speed: {{wind_speed}} mph</p>
+    </div>
 </main>
