@@ -3,10 +3,12 @@
 
 <!-- Main section to display the feed -->
 <main class="feed">
-    <!-- Loop through each feed item and display it -->
-    {{#each feed}}
-    <div class="map">
-        <!-- Display the content of each feed item here -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for a location">
+        <button id="search-button">Search</button>
     </div>
-    {{/each}}
+    
+    <div id="map" style="height: 200px;"></div>
+    <script src="/js/map.js"></script>
+    
 </main>
