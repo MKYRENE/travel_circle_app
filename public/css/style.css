@@ -158,10 +158,11 @@ ul li p {
     font-family: 'Oswald', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    color: #fff;
 }
 
 #team-info {
-    color: #fff;
+    color: #30193475;
     font-weight: 300;
 }
 
