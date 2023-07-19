@@ -11,6 +11,9 @@
         <!-- Input field for password -->
         <label for="password">Password:</label>
         <input name="password" type="password" id="password" placeholder="Enter password" required minlength="6">
+        {{#if error}}
+        <p class="error-message">{{ error }}</p>
+        {{/if}}
 
         <!-- Submit button to sign in -->
         <button>Sign In</button>
@@ -19,8 +22,4 @@
         <p class="d-flex justify-content-center align-items-center">Not a member?&nbsp;<a href="/register"
                 id="create-button">Create Account</a></p>
     </form>
-
-    {{#if error}}
-    <p class="error-message">{{ error }}</p>
-    {{/if}}
 </div>
