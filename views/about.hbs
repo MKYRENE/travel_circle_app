@@ -3,21 +3,28 @@
 
 <head>
   <title>About</title>
-  <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to your CSS file -->
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
+  <!-- About section with title -->
   <div class="about-container d-flex justify-content-center align-items-center">
     <h1>ABOUT US</h1>
   </div>
 
-  <!-- <div class="about-container d-flex justify-content-center align-items-center">
-        <h2>OUR STORY</h2>
-    </div> -->
+  <!-- Commented out sections -->
+  <!--
+  <div class="about-container d-flex justify-content-center align-items-center">
+      <h2>OUR STORY</h2>
+  </div>
+  -->
+  {{!--
+  <div class="about-container d-flex justify-content-center align-items-center">
+  </div>
+  --}}
 
-  {{!-- <div class="about-container d-flex justify-content-center align-items-center">
-  </div> --}}
-
+  <!-- Section: THE CONCEPT -->
   <div class="p-container d-flex justify-content-center align-items-center">
     <h3>THE CONCEPT</h3>
     <p>
@@ -28,8 +35,7 @@
     </p>
   </div>
 
-
-
+  <!-- Section: THE FUTURE -->
   <div class="p-container d-flex justify-content-center align-items-center">
     <h3>THE FUTURE</h3>
     <p>
@@ -39,12 +45,13 @@
     </p>
   </div>
 
-
-  <div class="team-container text-center">
+  <!-- Section: THE TEAM with ID "team-contact" -->
+  <div id="team-contact" class="team-container text-center">
     <div class="row align-items-center">
       <h3>THE TEAM</h3>
       <br></br>
       <br></br>
+      <!-- Daniel Cohen -->
       <div class="col">
         Daniel Cohen
         <div>
@@ -57,6 +64,7 @@
           <a class="team-info" href="https://www.linkedin.com/in/danielzcohen/">LinkedIn</a>
         </div>
       </div>
+      <!-- John Paul King -->
       <div class="col">
         John Paul King
         <div>
@@ -69,6 +77,7 @@
           <a class="team-info" href="https://www.linkedin.com/in/jpking1337/">LinkedIn</a>
         </div>
       </div>
+      <!-- Michael R. Rodriguez -->
       <div class="col">
         Michael R. Rodriguez
         <div>
@@ -81,6 +90,7 @@
           <a class="team-info" href="https://www.linkedin.com/in/rodriguezm90/">LinkedIn</a>
         </div>
       </div>
+      <!-- Ryan Wysocki -->
       <div class="col">
         Ryan Wysocki
         <div>
@@ -96,52 +106,29 @@
     </div>
   </div>
 
+  <!-- Commented out sections -->
   <!-- 
-    <div>
-        Daniel Cohen:
-            Github: https://github.com/dancohen6
-            Email: dzcsix@gmail.com
-    </div>
-    <div>
-        John Paul King: 
-            Github: https://github.com/jp-king-1337
-            Email: jp.king.1337@gmail.com
-    </div>
-    <div>
-        Michael R. Rodriguez: 
-            Github: https://github.com/MKYRENE
-            Email: mkyrenee.dev@gmail.com
-    </div>
-    <div>
-        Ryan Wysocki:
-            Github: https://github.com/rpwysocki
-            Email: ryan.wysocki78@gmail.com 
-    </div>
-    -->
-
+  <div>
+      Daniel Cohen:
+          Github: https://github.com/dancohen6
+          Email: dzcsix@gmail.com
+  </div>
+  <div>
+      John Paul King: 
+          Github: https://github.com/jp-king-1337
+          Email: jp.king.1337@gmail.com
+  </div>
+  <div>
+      Michael R. Rodriguez: 
+          Github: https://github.com/MKYRENE
+          Email: mkyrenee.dev@gmail.com
+  </div>
+  <div>
+      Ryan Wysocki:
+          Github: https://github.com/rpwysocki
+          Email: ryan.wysocki78@gmail.com 
+  </div>
+  -->
 </body>
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="/assets/photos/earth.png" alt="Travel Circle Logo">
-    </div>
-    <div class="footer-links">
-      <a href="#">Home</a>
-      <a href="#">Destinations</a>
-      <a href="#">Tours</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </div>
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2023 Travel Circle. All rights reserved.</p>
-  </div>
-</footer>
 
 </html>

@@ -1,38 +1,23 @@
+<!-- Section: Login container -->
 <div class="login-container">
+    <!-- Login form -->
     <form action="/login" method="POST">
+        <!-- Login heading -->
         <h1>User Login</h1>
 
+        <!-- Input field for username -->
         <label for="username">Username:</label>
         <input name="username" type="text" id="username" placeholder="Enter username" required minlength="3">
 
+        <!-- Input field for password -->
         <label for="password">Password:</label>
         <input name="password" type="password" id="password" placeholder="Enter password" required minlength="6">
+
+        <!-- Submit button to sign in -->
         <button>Sign In</button>
+
+        <!-- Link to register page for new users -->
         <p class="d-flex justify-content-center align-items-center">Not a member?&nbsp;<a href="/register"
                 id="create-button">Create Account</a></p>
     </form>
 </div>
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="/assets/photos/earth.png" alt="Travel Circle Logo">
-    </div>
-    <div class="footer-links">
-      <a href="#">Home</a>
-      <a href="#">Destinations</a>
-      <a href="#">Tours</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </div>
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2023 Travel Circle. All rights reserved.</p>
-  </div>
-</footer>
-
