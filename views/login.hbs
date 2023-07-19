@@ -11,4 +11,8 @@
         <p class="d-flex justify-content-center align-items-center">Not a member?&nbsp;<a href="/register"
                 id="create-button">Create Account</a></p>
     </form>
+
+    {{#if error}}
+    <p class="error-message">{{ error }}</p>
+    {{/if}}
 </div>

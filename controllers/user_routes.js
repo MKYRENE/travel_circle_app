@@ -25,7 +25,14 @@ router.post("/login", async (req, res) => {
         // Validate that the password is a match
         const isValidPass = await user.validatePass(formPassword)
 
-        if (!isValidPass) throw new Error("invalid_password");
+        if (!isValidPass) {
+            // Password is invalid, render login view with an error message
+            return res.render("login", {
+                isLoginOrRegister: true,
+                isLoggedIn: false,
+                error: "Invalid password. Please try again.",
+            });
+        }
 
         // User has been validated and now we log the user in by creating a session
         req.session.user_id = user.id;
@@ -35,10 +42,8 @@ router.post("/login", async (req, res) => {
 
         res.redirect("/dashboard");
 
-    } catch(err) {
-        if (err.message === "invalid_password") {
-            res.redirect("/login");
-        }
+    } catch (err) {
+        res.redirect("/login");
     }
 });
 
@@ -61,9 +66,14 @@ router.post("/register", async (req, res) => {
             }
         });
 
-        // If username or email already registered, return error
-        if (existingUsername || existingEmail) {
-            return res.render("register", { error: "Username or email already registered. Please try a new username or email, or log in!"});
+        // If username already registered, return error
+        if (existingUsername) {
+            return res.render("register", { error: "That username is taken! Please log in if you have an account, or register with a different username." });
+        }
+
+        // If email already registered, return error
+        if (existingEmail) {
+            return res.render("register", { error: "That email is taken! Please log in if you have an account, or register with a different email." });
         }
 
         // Has password before saving to db
@@ -83,7 +93,7 @@ router.post("/register", async (req, res) => {
         res.redirect("/dashboard");
     } catch (err) {
         const dupeEmail = err.errors.find(e => e.path === "email");
-    
+
         // If email already exists, redirect to the login page
         if (dupeEmail) res.redirect("/login");
     }
