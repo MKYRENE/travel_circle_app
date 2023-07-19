@@ -64,7 +64,7 @@ User.init({
 
 User.prototype.validatePass = async function (formPassword) {
     const isValid = await compare(formPassword, this.password);
-
+    
     return isValid;
 }
 
