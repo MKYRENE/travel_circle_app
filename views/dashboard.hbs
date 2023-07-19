@@ -1,5 +1,7 @@
+<!-- Main heading for the Dashboard page -->
 <h1>Dashboard</h1>
 
+<<<<<<< HEAD
 
 <main class="post"></main>
 <form action="/post" method="POST">
@@ -19,4 +21,23 @@
     <button id="search-button">Search</button>
 </div>
 <div id="map"></div>
+=======
+<!-- Form to post new content -->
+<form action="/post" method="POST">
+    <!-- Input field for user to type their thoughts -->
+    <input name="text" type="text" placeholder="What are you thinking?">
+    <!-- Button to submit the post -->
+    <button>Share</button>
+</form>
+
+<!-- Main section to display the posts -->
+<main class="post">
+    <!-- Loop through each post and display them -->
+    {{#each post}}
+    <div class="post">
+        <!-- Display the content of each post -->
+        <p>{{text}}</p>
+    </div>
+    {{/each}}
+>>>>>>> 3a131e98755c1c56b453103e9869cf5d7942efbd
 </main>
