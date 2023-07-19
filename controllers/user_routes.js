@@ -31,7 +31,7 @@ router.post("/login", async (req, res) => {
         req.session.user_id = user.id;
 
         // Give user's firstName so we can say "Welcome, [firstName]!" instead of "Welcome, [email]!"
-        req.session.user_id = user.firstName;
+        req.session.user_firstName = user.firstName;
 
         res.redirect("/dashboard");
 
