@@ -1,13 +1,22 @@
+<!-- Section: Login container -->
 <div class="login-container">
+    <!-- Login form -->
     <form action="/login" method="POST">
+        <!-- Login heading -->
         <h1>User Login</h1>
 
+        <!-- Input field for username -->
         <label for="username">Username:</label>
         <input name="username" type="text" id="username" placeholder="Enter username" required minlength="3">
 
+        <!-- Input field for password -->
         <label for="password">Password:</label>
         <input name="password" type="password" id="password" placeholder="Enter password" required minlength="6">
+
+        <!-- Submit button to sign in -->
         <button>Sign In</button>
+
+        <!-- Link to register page for new users -->
         <p class="d-flex justify-content-center align-items-center">Not a member?&nbsp;<a href="/register"
                 id="create-button">Create Account</a></p>
     </form>
