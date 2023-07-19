@@ -10,43 +10,46 @@ const User = require("../models/User");
 // Route to handle user login
 router.post("/login", async (req, res) => {
     try {
-        // Check if the user is already logged in; if so, redirect to the dashboard
+
         if (req.session.user_id) {
             return res.redirect("/dashboard");
         }
-
-        // Extract the username and password from the request body
         const formUsername = req.body.username;
         const formPassword = req.body.password;
 
-        // Find the user in the database by their username
         const user = await User.findOne({
             where: {
                 username: formUsername
             }
         });
 
-        // If the user doesn't exist, redirect to the registration page
+        // If user doesn't exist, break the process with return and then redirect to /register
         if (!user) return res.redirect("/register");
 
-        // Validate that the provided password matches the user's hashed password
+        // Validate that the password is a match
+
         const isValidPass = await user.validatePass(formPassword)
 
-        // If the password is invalid, throw an error with a custom message
-        if (!isValidPass) throw new Error("invalid_password");
+        if (!isValidPass) {
+            console.log('invalid pass')
+            // Password is invalid, render login view with an error message
+            return res.render("login", {
+                isLoginOrRegister: true,
+                isLoggedIn: false,
+                error: "Invalid password. Please try again.",
+            });
+        }
+        console.log('6')
 
         // If the user is valid, create a session and log the user in
         req.session.user_id = user.id;
         req.session.user_firstName = user.firstName;
-
-        // Redirect the user to the dashboard after successful login
+        console.log('7')
         res.redirect("/dashboard");
 
     } catch (err) {
-        // If there's an error due to an invalid password, redirect to the login page
-        if (err.message === "invalid_password") {
-            res.redirect("/login");
-        }
+        console.error(err)
+        res.redirect("/login");
     }
 });
 
@@ -70,13 +73,15 @@ router.post("/register", async (req, res) => {
             }
         });
 
-        // If the username or email is already registered, return an error
-        if (existingUsername || existingEmail) {
-            return res.render("register", { error: "Username or email already registered. Please try a new username or email, or log in!" });
+        // If username already registered, return error
+        if (existingUsername) {
+            return res.render("register", { error: "That username is taken! Please log in if you have an account, or register with a different username." });
         }
 
-        // Hash the password before saving it to the database
-        const hashPassword = await hash(password, 10);
+        // If email already registered, return error
+        if (existingEmail) {
+            return res.render("register", { error: "That email is taken! Please log in if you have an account, or register with a different email." });
+        }
 
         // Create a new user in the database with the provided details
         const newUser = await User.create({
@@ -84,7 +89,7 @@ router.post("/register", async (req, res) => {
             lastName,
             username,
             email,
-            password: hashPassword,
+            password,
         });
 
         // Create a session and send a cookie to the client after successful registration
@@ -93,10 +98,10 @@ router.post("/register", async (req, res) => {
         // Redirect the user to the dashboard after successful registration
         res.redirect("/dashboard");
     } catch (err) {
-        // Check if the error is due to a duplicate email
+        console.log(err);
         const dupeEmail = err.errors.find(e => e.path === "email");
 
-        // If the email already exists, redirect to the login page
+        // If email already exists, redirect to the login page
         if (dupeEmail) res.redirect("/login");
     }
 });

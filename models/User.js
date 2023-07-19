@@ -53,15 +53,21 @@ User.init({
             const hashPassword = await hash(user.password, 10);
 
             user.password = hashPassword;
-        }
+            return user;
+        },
+        // beforeUpdate: async (updatedUserData) => {
+        //     updatedUserData.password = await hash(updatedUserData.password, 10)
+        //     return updatedUserData;
+        // }
     },
 });
 
 User.prototype.validatePass = async function(formPassword) {
     const isValid = await compare(formPassword, this.password);
-
+    
     return isValid;
 }
+
 
 User.hasMany(Post);
 Post.belongsTo(User);

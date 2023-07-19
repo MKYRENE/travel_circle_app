@@ -1,6 +1,5 @@
 <!-- Section: Login container -->
 <div class="login-container">
-    <!-- Login form -->
     <form action="/login" method="POST">
         <!-- Login heading -->
         <h1>User Login</h1>
@@ -20,4 +19,8 @@
         <p class="d-flex justify-content-center align-items-center">Not a member?&nbsp;<a href="/register"
                 id="create-button">Create Account</a></p>
     </form>
+
+    {{#if error}}
+    <p class="error-message">{{ error }}</p>
+    {{/if}}
 </div>
