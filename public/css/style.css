@@ -2,20 +2,24 @@
     --myPurple: #301934;
     --myPurpleLight: #30193475;
     --white: #fff;
-}
-
-body,html {
+  }
+  
+  body,
+  html {
     height: 100%;
-}
-
-body {
+  }
+  
+  body {
     background-image: url(/assets/photos/mouintains.jpg);
     background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 5%;
-}
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body fills the viewport */
+  }
 
 p {
     margin: 0;
@@ -209,6 +213,10 @@ ul li p {
     color: white;
 }
 
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
+  }
+
 .footer-container {
     background-color: #30193488;
     width: 400px;
@@ -220,11 +228,10 @@ ul li p {
     color: white;
   }
   
-  .footer-logo {
-    background-image: url('/assets/photos/earth.png');
-    background-size: cover;
-    width: 100px;
-    height: 0px;
+  .footer-logo img {
+    /* background-image: url('/assets/photos/earth.png');
+    background-size: cover; */
+    width: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
