@@ -1,15 +1,22 @@
 <h1>Dashboard</h1>
 
-<form action="/thought" method="POST">
-    <input name="text" type="text" placeholder="What are you thinking?">
+
+<main class="post"></main>
+<form action="/post" method="POST">
+    <input name="text" type="text" placeholder="How is your trip?">
     <button>Share</button>
 </form>
 
+{{#each post}}
+<div class="post">
+    <p>{{text}}</p>
+</div>
+{{/each}}
 
-<main class="thoughts">
-    {{#each thoughts}}
-        <div class="thought">
-            <p>{{text}}</p>
-        </div>
-    {{/each}}
+
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for a location">
+    <button id="search-button">Search</button>
+</div>
+<div id="map"></div>
 </main>
