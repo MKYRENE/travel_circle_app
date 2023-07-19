@@ -6,26 +6,26 @@ const User = require("../models/User");
 // Log in user
 router.post("/login", async (req, res) => {
     try {
-
+        
         if (req.session.user_id) {
             return res.redirect("/dashboard");
         }
         const formUsername = req.body.username;
         const formPassword = req.body.password;
-
+        
         const user = await User.findOne({
             where: {
                 username: formUsername
             }
         });
-
+        
         // If user doesn't exist, break the process with return and then redirect to /register
         if (!user) return res.redirect("/register");
-
+        
         // Validate that the password is a match
-
+        
         const isValidPass = await user.validatePass(formPassword)
-
+        
         if (!isValidPass) {
             console.log('invalid pass')
             // Password is invalid, render login view with an error message
