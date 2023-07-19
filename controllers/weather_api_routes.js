@@ -20,12 +20,12 @@ router.get("/weather", async (req, res) => {
 
         // Format the weather data to extract relevant information
         const formattedWeatherData = {
+            weather_icon: `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`,
             location: weatherData.name,
             date: new Date(weatherData.dt * 1000).toISOString().slice(0, 10),
             temperature: weatherData.main.temp,
             humidity: weatherData.main.humidity,
             wind_speed: weatherData.wind.speed,
-            weather_icon: `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`,
         };
 
         // Send the formatted weather data as a JSON response

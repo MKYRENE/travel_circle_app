@@ -1,18 +1,7 @@
-<h1>Dashboard</h1>
-
-<form id="postForm">
-    <input name="text" type="text" placeholder="What are you thinking?">
+<form id="postForm" class="dashboard-form">
+    <textarea name="text" placeholder="What did you do today?" rows="4" cols="50"></textarea>
     <input name="date" type="date" placeholder="Date">
-    <input name="location" type="text" placeholder="Location">
+    <input name="location" type="text" placeholder="What city are you in?">
 
     <button type="submit">Share</button>
 </form>
-
-
-<main class="post">
-    {{#each post}}
-    <div class="post">
-        <p>{{text}}</p>
-    </div>
-    {{/each}}
-</main>

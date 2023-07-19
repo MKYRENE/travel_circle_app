@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const postForm = document.getElementById("postForm");
-    const location = prompt("Enter location:");
-    const date = prompt("Enter date (YYYY-MM-DD):");
+    const dashboardLocationInput = document.getElementById("dashboardLocation");
+    const dashboardDateInput = document.getElementById("dashboardDate");
+
+    // Get the location and date values from the hidden input fields
+    const location = dashboardLocationInput.value;
+    const date = dashboardDateInput.value;
+    
 
     function fetchWeatherData(city, date) {
         const apiUrl = `/api/weather?location=${encodeURIComponent(city)}&date=${encodeURIComponent(date)}`;
