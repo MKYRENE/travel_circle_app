@@ -31,7 +31,7 @@ router.post("/login", async (req, res) => {
         req.session.user_id = user.id;
 
         // Give user's firstName so we can say "Welcome, [firstName]!" instead of "Welcome, [email]!"
-        req.session.user_id = user.firstName;
+        req.session.user_firstName = user.firstName;
 
         res.redirect("/dashboard");
 
@@ -63,7 +63,7 @@ router.post("/register", async (req, res) => {
 
         // If username or email already registered, return error
         if (existingUsername || existingEmail) {
-            return res.status(409).json({ error: "Username or email already registered."});
+            return res.render("register", { error: "Username or email already registered. Please try a new username or email, or log in!"});
         }
 
         // Has password before saving to db

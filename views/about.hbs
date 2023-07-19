@@ -1,107 +1,134 @@
-<div class="about-container d-flex justify-content-center align-items-center">
-<h1>ABOUT US</h1>
-</div>
+<!DOCTYPE html>
+<html>
 
-{{!-- <div class="about-container d-flex justify-content-center align-items-center">
-<h2>OUR STORY</h2>
-</div> --}}
+<head>
+  <title>About</title>
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 
-<div class="about-container d-flex justify-content-center align-items-center textBackground">
-<h3>THE CONCEPT</h3>
-</div>
+<body>
+  <!-- About section with title -->
+  <div class="about-container d-flex justify-content-center align-items-center">
+    <h1>ABOUT US</h1>
+  </div>
 
-<div class="p-container d-flex justify-content-center align-items-center textBackground">
-<p>
-    Travel Circle is a collaboration of 4 coding students that took the concept of social media and adapted it to be used for sharing travel details.  
-    We wanted a concept that could be used to share location, photos, and experiences with a select group.  We use login authentication and cloud storage for your photos to keep your details safe.
-</p>
-</div>
+  <!-- Commented out sections -->
+  <!--
+  <div class="about-container d-flex justify-content-center align-items-center">
+      <h2>OUR STORY</h2>
+  </div>
+  -->
+  {{!--
+  <div class="about-container d-flex justify-content-center align-items-center">
+  </div>
+  --}}
 
-<div class="about-container d-flex justify-content-center align-items-center">
-<h3>THE FUTURE</h3>
-</div>
+  <!-- Section: THE CONCEPT -->
+  <div class="p-container d-flex justify-content-center align-items-center">
+    <h3>THE CONCEPT</h3>
+    <p>
+      Travel Circle is a collaboration of 4 coding students that took the concept of social media and adapted it to be
+      used for sharing travel details.
+      We wanted a concept that could be used to share location, photos, and experiences with a select group. We use
+      login authentication and cloud storage for your photos to keep your details safe.
+    </p>
+  </div>
 
-<div class="p-container d-flex justify-content-center align-items-center">
-<p>
-    In the future we plan on adding "The Next Stop" page to allow users to post where they are going next. We are also looking into push notifications for new posts.  We woud like to add a details section to allow users to enter information regarding air fare, hotels, and ground transportation to save for future reference.  
-</p>
-</div>
+  <!-- Section: THE FUTURE -->
+  <div class="p-container d-flex justify-content-center align-items-center">
+    <h3>THE FUTURE</h3>
+    <p>
+      In the future, we plan on adding "The Next Stop" page to allow users to post where they are going next. We are
+      also looking into push notifications for new posts. We would like to add a details section to allow users to enter
+      information regarding airfare, hotels, and ground transportation to save for future reference.
+    </p>
+  </div>
 
-<div class="team-container d-flex justify-content-center align-items-center">
-<h3>THE TEAM</h3>
-</div>
-
-<div class="team-container text-center textBackground">
-  <div class="row align-items-center">
-    <div class="col">
-      Daniel Cohen
-      <div>
-        <a id="team-info" href="https://github.com/dancohen6">GitHub</a>
+  <!-- Section: THE TEAM with ID "team-contact" -->
+  <div id="team-contact" class="team-container text-center">
+    <div class="row align-items-center">
+      <h3>THE TEAM</h3>
+      <br></br>
+      <br></br>
+      <!-- Daniel Cohen -->
+      <div class="col">
+        Daniel Cohen
+        <div>
+          <a class="team-info" href="https://github.com/dancohen6">GitHub</a>
+        </div>
+        <div>
+          <a class="team-info" href="mailto: dzcsix@gmail.com">Email</a>
+        </div>
+        <div>
+          <a class="team-info" href="https://www.linkedin.com/in/danielzcohen/">LinkedIn</a>
+        </div>
       </div>
-      <div>
-        <a id="team-info" href="mailto: dzcsix@gmail.com">Email</a>
+      <!-- John Paul King -->
+      <div class="col">
+        John Paul King
+        <div>
+          <a class="team-info" href="https://github.com/jp-king-1337">GitHub</a>
+        </div>
+        <div>
+          <a class="team-info" href="mailto: jp.king.1337@gmail.com">Email</a>
+        </div>
+        <div>
+          <a class="team-info" href="https://www.linkedin.com/in/jpking1337/">LinkedIn</a>
+        </div>
       </div>
-      <div>
-        <a id="team-info" href="https://www.linkedin.com/in/danielzcohen/">LinkedIn</a>
+      <!-- Michael R. Rodriguez -->
+      <div class="col">
+        Michael R. Rodriguez
+        <div>
+          <a class="team-info" href="https://github.com/MKYRENE">GitHub</a>
+        </div>
+        <div>
+          <a class="team-info" href="mailto: mkyrenee.dev@gmail.com">Email</a>
+        </div>
+        <div>
+          <a class="team-info" href="https://www.linkedin.com/in/rodriguezm90/">LinkedIn</a>
+        </div>
       </div>
-    </div>
-    <div class="col">
-      John Paul King
-      <div>
-        <a id="team-info" href="https://github.com/jp-king-1337">GitHub</a>
-      </div>
-      <div>
-        <a id="team-info" href="mailto: jp.king.1337@gmail.com">Email</a>
-      </div>
-      <div>
-        <a id="team-info" href="https://www.linkedin.com/in/jpking1337/">LinkedIn</a>
-      </div>
-    </div>
-    <div class="col">
-      Michael R. Rodriguez
-      <div>
-        <a id="team-info" href="https://github.com/MKYRENE">GitHub</a>
-      </div>
-      <div>
-        <a id="team-info" href="mailto: mkyrenee.dev@gmail.com">Email</a>
-      </div>
-      <div>
-        <a id="team-info" href="https://www.linkedin.com/in/rodriguezm90/">LinkedIn</a>
-      </div>
-    </div>
-    <div class="col">
-      Ryan Wysocki
-      <div>
-        <a id="team-info" href="https://github.com/rpwysocki">GitHub</a>
-      </div>
-      <div>
-        <a id="team-info" href="mailto: ryan.wysocki78@gmail.com">Email</a>
-      </div>
-      <div>
-        <a id="team-info" href="https://www.linkedin.com/in/ryan-wysocki-76513117/">LinkedIn</a>
+      <!-- Ryan Wysocki -->
+      <div class="col">
+        Ryan Wysocki
+        <div>
+          <a class="team-info" href="https://github.com/rpwysocki">GitHub</a>
+        </div>
+        <div>
+          <a class="team-info" href="mailto: ryan.wysocki78@gmail.com">Email</a>
+        </div>
+        <div>
+          <a class="team-info" href="https://www.linkedin.com/in/ryan-wysocki-76513117/">LinkedIn</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-    {{!-- <div>
-        Daniel Cohen:
-            Github: https://github.com/dancohen6
-            Email: dzcsix@gmail.com
-    </div>
-    <div>
-        John Paul King: 
-            Github: https://github.com/jp-king-1337
-            Email: jp.king.1337@gmail.com
-    </div>
-    <div>
-        Michael R. Rodriguez: 
-            Github: https://github.com/MKYRENE
-            Email: mkyrenee.dev@gmail.com
-    </div>
-    <div>
-        Ryan Wysocki:
-            Github: https://github.com/rpwysocki
-            Email: ryan.wysocki78@gmail.com 
-    </div> --}}
+  <!-- Commented out sections -->
+  <!-- 
+  <div>
+      Daniel Cohen:
+          Github: https://github.com/dancohen6
+          Email: dzcsix@gmail.com
+  </div>
+  <div>
+      John Paul King: 
+          Github: https://github.com/jp-king-1337
+          Email: jp.king.1337@gmail.com
+  </div>
+  <div>
+      Michael R. Rodriguez: 
+          Github: https://github.com/MKYRENE
+          Email: mkyrenee.dev@gmail.com
+  </div>
+  <div>
+      Ryan Wysocki:
+          Github: https://github.com/rpwysocki
+          Email: ryan.wysocki78@gmail.com 
+  </div>
+  -->
+</body>
 
+</html>

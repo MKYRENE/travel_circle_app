@@ -4,10 +4,13 @@
     --white: #fff;
 }
 
-body,html {
+/* Body and HTML */
+body,
+html {
     height: 100%;
 }
 
+/* Body styling */
 body {
     background-image: url(/assets/photos/mouintains.jpg);
     background-color: white;
@@ -15,26 +18,33 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     padding: 5%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure the body fills the viewport */
 }
 
-
+/* Reset margin and padding for paragraphs */
 p {
     margin: 0;
     padding: 0;
 }
 
+/* Button styling */
 button {
     background-color: var(--myPurple);
     color: var(--white);
     border-radius: 5px;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Navigation */
 nav {
     display: flex;
     justify-content: end;
@@ -63,10 +73,12 @@ nav a:hover {
     color: var(--white);
 }
 
+/* Styling for text with a background color */
 .textBackground {
     background-color: rgb(0, 151, 108);
 }
 
+/* Form styling */
 form {
     background-color: #30193475;
     width: 400px;
@@ -92,6 +104,7 @@ form button {
     align-self: center;
 }
 
+/* Styling for create-button link */
 #create-button {
     text-decoration: none;
     color: lightblue;
@@ -102,18 +115,13 @@ form button {
     border-bottom: 1px solid lightblue;
 }
 
+/* List item styling */
 ul li {
     margin: 10px 0;
 }
 
 ul li p {
     margin: 4px;
-}
-
-.container {
-    padding-top: 5rem;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Roboto', sans-serif;
 }
 
 .p-container {
@@ -157,7 +165,118 @@ ul li p {
     font-weight: 300;
 }
 
+/* Styling for the globe image */
 .globe img {
     width: 50px;
     height: auto;
+}
+
+/* Common styling for containers */
+.container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.p-container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.about-container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.team-container {
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.team-info {
+    color: white;
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto;
+    /* Push the footer to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center content horizontally */
+    background-color: #30193488;
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.footer-container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+}
+
+.footer-logo img {
+    /* background-image: url('/assets/photos/earth.png');
+    background-size: cover; */
+    width: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center content horizontally */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.footer-bottom p {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    margin: 10px 0;
 }

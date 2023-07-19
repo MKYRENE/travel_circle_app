@@ -2,40 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Travel Circle</title>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <title>Travel Circle</title>
+  <!-- Mapbox CSS link -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+  <!-- Custom CSS link -->
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="globe">
-            <img src="/assets/photos/earth.png" alt="globe">
-        </div>
-        <nav>
-            {{#if isLoggedIn}}
-                {{!-- This edits navbar on Dashboard. --}}
-                <p>Welcome, {{firstName}}!</p>
-                <a href="/feed" class="{{#if isFeed}}active{{/if}}">Feed</a>
-                <a href="/dashboard" class="{{#if isDashboard}}active{{/if}}">Dashboard</a>
-                <a href="/about" class="{{#if isAbout}}active{{/if}}">About Us</a>
-                <a href="/logout">Log Out</a>
-                {{else}}
-                    {{!-- This edits navbar on home page. --}}
-                    <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
-                    <a href="/about" class="{{#if isAbout}}active{{/if}}">About Us</a>
-                    <a href="/login" class="{{#if isDashboard}}active{{/if}}">Login/Sign Up</a>
-            {{/if}}
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="globe">
+      <img src="/assets/photos/earth.png" alt="globe">
+    </div>
+    <!-- Navigation Bar -->
+    <nav>
+      {{#if isLoggedIn}}
+      {{!-- This edits navbar on Dashboard. --}}
+      <p>Welcome, {{firstName}}!</p>
+      <a href="/feed" class="{{#if isFeed}}active{{/if}}">Feed</a>
+      <a href="/dashboard" class="{{#if isDashboard}}active{{/if}}">Dashboard</a>
+      <a href="/about" class="{{#if isAbout}}active{{/if}}">About Us</a>
+      <a href="/logout">Log Out</a>
+      {{else}}
+      {{!-- This edits navbar on home page. --}}
+      <a href="/" class="{{#if isHome}}active{{/if}}">Home</a>
+      <a href="/about" class="{{#if isAbout}}active{{/if}}">About Us</a>
+      <a href="/login" class="{{#if isLoginOrRegister}}active{{/if}}">Login/Sign Up</a>
+      {{/if}}
+    </nav>
+  </header>
 
-    {{{body}}}
+  <!-- The main content of the page, will be replaced by other templates -->
+  {{{body}}}
+
+  <!-- Mapbox JS script -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+
 </body>
+
+<footer>
+  <!-- Footer container -->
+  <div class="footer-container">
+    <!-- Footer logo -->
+    <div class="footer-logo">
+      <img src="/assets/photos/earth.png" alt="Travel Circle Logo">
+    </div>
+    <!-- Footer links -->
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <!-- Contact link pointing to the "about.hbs" file with the ID "team-contact" -->
+      <a href="/about#team-contact">Contact</a>
+    </div>
+  </div>
+  <!-- Footer bottom -->
+  <div class="footer-bottom">
+    <p>&copy; 2023 Travel Circle. All rights reserved.</p>
+  </div>
+</footer>
 
 </html>
