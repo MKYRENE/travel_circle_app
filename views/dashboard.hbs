@@ -1,16 +1,16 @@
 <!-- Main heading for the Dashboard page -->
 <h1>Dashboard</h1>
 
-<!-- Form to post new content -->
-<form action="/post" method="POST">
-    <!-- Input field for user to type their thoughts -->
-    <input name="text" type="text" placeholder="What are you thinking?">
-    <!-- Button to submit the post -->
-    <button>Share</button>
-</form>
-
-<!-- Main section to display the posts -->
 <main class="post">
+    <!-- Form to post new content -->
+    <form action="/post" method="POST">
+        <!-- Input field for user to type their thoughts -->
+        <input name="text" type="text" placeholder="What are you thinking?">
+        <!-- Button to submit the post -->
+        <button>Share</button>
+    </form>
+
+    <!-- Main section to display the posts -->
     <!-- Loop through each post and display them -->
     {{#each post}}
     <div class="post">
@@ -18,15 +18,10 @@
         <p>{{text}}</p>
     </div>
     {{/each}}
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for a location">
+        <button id="search-button">Search</button>
+    </div>
+    <div id="map"></div>
 
 </main>
-
-
-
-
-
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search for a location">
-    <button id="search-button">Search</button>
-</div>
-<div id="map"></div>
