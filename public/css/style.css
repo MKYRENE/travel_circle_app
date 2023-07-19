@@ -287,3 +287,8 @@ footer {
 form.dashboard-form {
     width: 80%;
 }
+
+#map {
+    height: 500px;
+    width: 500px;
+}
