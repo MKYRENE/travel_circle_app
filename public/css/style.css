@@ -282,3 +282,8 @@ footer {
     font-size: 12px;
     margin: 10px 0;
 }
+
+/* Override width for the dashboard form */
+form.dashboard-form {
+    width: 80%;
+}
