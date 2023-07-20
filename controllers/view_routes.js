@@ -14,15 +14,22 @@ function isAuthenticated(req, res, next) {
 // PUBLIC ROUTES
 // Show Homepage
 router.get("/", async (req, res) => {
+    const user_id = req.session.user_id
     let posts = await Post.findAll({
         include: User
     });
-    
+
     posts = posts.map(t => t.get({ plain: true }));
-    
+    let user;
+    if (user_id) {
+        user = await User.findByPk(user_id)
+        console.log(user)
+    }
+
     res.render("index", {
         isHome: true,
-        isLoggedIn: req.session.user_id,
+        isLoggedIn: user_id,
+        firstName:user?.firstName
     });
 });
 
