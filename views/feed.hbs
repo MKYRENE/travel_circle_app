@@ -1,8 +1,11 @@
-<!-- Main heading for the Feed page -->
-<h1>Feed</h1>
-
-<!-- Main section to display the feed -->
 <main class="feed">
+    {{#each posts}}
+        <div class="response">
+            <h3 class="response-text">{{text}}</h3>
+            <p class="response-city">City: {{city}}</p>
+            <p class="response-date">Added On: {{date}}</p>
+        </div>
+    {{/each}}
 
     {{!-- Weather --}}
     {{!-- <div class="weather">
@@ -14,12 +17,19 @@
         <p>Wind Speed: {{wind_speed}} mph</p>
     </div>
     <script src="/js/weather_el.js"></script> --}}
-    <div class="response">
-        <p>{{text}}</p>
+    {{!-- <div class="response">
+        {{#if date}}
         <p>Date: {{date}}</p>
+        {{/if}}
+
+        {{#if city}}
         <p>City: {{city}}</p>
-        <p>Added By: {{user.username}}</p>
-    </div>
+        {{/if}}
+
+        {{#if text}}
+        <p>{{text}}</p>
+        {{/if}}
+    </div> --}}
 
     {{!-- Map --}}
     <div id="map"></div>

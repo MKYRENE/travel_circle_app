@@ -80,7 +80,7 @@ nav a:hover {
 
 /* Form styling */
 form {
-    background-color: #30193475;
+    background-color: #301934ce;
     width: 400px;
     margin: 20px auto;
     padding: 5px;
@@ -297,6 +297,21 @@ form.dashboard-form {
 
 
 .response {
-    background-color: #30193488;
+    background-color: #301934ce;
+    border-radius: 5px;
     color: white;
+    margin-bottom: 25px;
+    padding: 25px;
+}
+
+.response-text {
+
+}
+
+.response-city {
+    
+}
+
+.response-date {
+
 }

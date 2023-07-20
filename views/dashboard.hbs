@@ -6,26 +6,4 @@
 
         <button>Share</button>
     </form>
-
-    <div class="response">
-        {{#if date}}
-        <p>Date: {{date}}</p>
-        {{/if}}
-
-        {{#if city}}
-        <p>City: {{city}}</p>
-        {{/if}}
-
-        {{#if text}}
-        <p>{{text}}</p>
-        {{/if}}
-    </div>
 </main>
-
-<script>
-    // Reset the form after successful submission
-    const postForm = document.getElementById('postForm');
-    postForm.addEventListener('submit', () => {
-        postForm.reset();
-    });
-</script>
