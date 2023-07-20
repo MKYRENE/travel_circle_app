@@ -292,3 +292,9 @@ form.dashboard-form {
     height: 500px;
     width: 500px;
 }
+
+.weather {
+    background-color: #30193488;
+    color: white;
+    columns: 4;
+}
