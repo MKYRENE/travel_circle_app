@@ -305,14 +305,18 @@ form.dashboard-form {
     padding: 25px;
 }
 
+/* Styling the response text (h3) */
 .response-text {
-
+    font-size: 24px;
+    font-weight: bold;
 }
 
+/* Styling the city (p) */
 .response-city {
-    
+    font-size: 18px;
 }
 
+/* Styling the date (p) */
 .response-date {
-
+    font-size: 16px;
 }
