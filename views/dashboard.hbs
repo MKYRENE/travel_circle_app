@@ -1,25 +1,8 @@
-<form id="postForm" class="dashboard-form">
-    <textarea name="text" placeholder="What did you do today?" rows="4" cols="50"></textarea>
-    <input name="date" type="date" placeholder="Date">
-    <input name="location" type="text" placeholder="What city are you in?">
-
-    <main class="post">
-        <!-- Form to post new content -->
-        <form action="/post" method="POST">
-            <!-- Input field for user to type their thoughts -->
-            <input name="text" type="text" placeholder="What are you thinking?">
-            <!-- Button to submit the post -->
-            <button>Share</button>
-        </form>
-
-        <!-- Main section to display the posts -->
-        <!-- Loop through each post and display them -->
-        {{#each post}}
-        <div class="post">
-            <!-- Display the content of each post -->
-            <p>{{text}}</p>
-        </div>
-        {{/each}}
-
-
-    </main>
+<main class="post">
+    <form action="/post" method="POST" id="postForm" class="dashboard-form">
+        <input name="date" type="date" placeholder="Date" required>
+        <input name="city" type="text" placeholder="What city are you in?">
+        <textarea name="text" placeholder="What did you do today?" rows="4" cols="50"></textarea>
+        <button>Share</button>
+    </form>
+</main>
