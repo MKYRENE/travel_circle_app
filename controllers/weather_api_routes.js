@@ -10,9 +10,11 @@ router.get("/weather", async (req, res) => {
         }
 
         const apiKey = process.env.WEATHER_API_KEY;
-        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+        const weatherUrl = `
+        // https://history.openweathermap.org/data/2.5/history/city?lat={lat}&lon={lon}&type=hour&start={start}&end={end}&units=imperial&appid=${apiKey}
+        https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
             location
-        )}&dt=${new Date(date).getTime() / 1000}&units=imperial&appid=${apiKey}`;
+        )}&dt=${new Date(date).getTime() / 1000}&appid=${apiKey}`;
 
         // Fetch weather data from the OpenWeatherMap API using Axios
         const response = await axios.get(weatherUrl);
