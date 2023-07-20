@@ -238,17 +238,13 @@ footer {
 }
 
 .footer-container {
-    width: 100%;
-    margin: 20px auto;
-    padding: 5px;
-    display: flex;
-    flex-direction: space-between;
-    align-items: center;
-    border-radius: 5px;
     color: white;
+    text-align: center;
+    font-size: 12px;
+    margin: 10px 0;
 }
 
-.footer-logo img {
+img {
     /* background-image: url('/assets/photos/earth.png');
     background-size: cover; */
     width: 30px;
@@ -264,7 +260,7 @@ footer {
     /* Center content horizontally */
 }
 
-.footer-links a {
+a {
     color: white;
     text-decoration: none;
     margin: 10px;
@@ -289,8 +285,8 @@ form.dashboard-form {
 }
 
 #map {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
 }
 
 .weather {
