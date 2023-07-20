@@ -284,10 +284,23 @@ form.dashboard-form {
     width: 80%;
 }
 
+/* For larger screens */
 #map {
-    height: 400px;
-    width: 400px;
+    height: 60vh;
+    /* 60% of the viewport height */
+    width: 80%;
+    /* 80% of the viewport width */
     margin: 45px auto 0;
+}
+
+/* For smaller screens, e.g., mobile devices */
+@media screen and (max-width: 600px) {
+    #map {
+        height: 40vh;
+        /* 40% of the viewport height */
+        width: 90%;
+        /* 90% of the viewport width */
+    }
 }
 
 .weather {
