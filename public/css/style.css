@@ -13,7 +13,7 @@ html {
 /* Body styling */
 body {
     background-image: url(/assets/photos/mouintains.jpg);
-    background-color: white;
+    background-color: aliceblue;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -287,6 +287,7 @@ form.dashboard-form {
 #map {
     height: 400px;
     width: 400px;
+    margin: 45px auto 0;
 }
 
 .weather {
