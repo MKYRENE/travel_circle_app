@@ -15,6 +15,15 @@
   <title>Travel Circle</title>
   <!-- Mapbox CSS link -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+  <!-- Mapbox JS script -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+   <!-- Include the mapbox-gl-geocoder plugin -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.css"
+    type="text/css"
+  />
   <!-- Custom CSS link -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -42,8 +51,7 @@
       {{/if}}
     </nav>
   </header>
-  <!-- Mapbox JS script -->
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+  
 
   <!-- The main content of the page, will be replaced by other templates -->
   {{{body}}}
@@ -51,7 +59,6 @@
 
 </body>
 
-<<<<<<< HEAD
 <footer>
   <!-- Footer container -->
   <div class="footer-container">
@@ -72,27 +79,5 @@
       <p>&copy; 2023 Travel Circle. All rights reserved.</p>
     </div>
 </footer>
-=======
-
-  <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Footer logo -->
-            <div class="footer-logo">
-                <img src="/assets/photos/earth.png" alt="Travel Circle Logo">
-            </div>
-            <!-- Footer links -->
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/about#team-contact">Contact</a>
-            </div>
-        </div>
-        <!-- Footer bottom -->
-        <div class="footer-bottom">
-            <p>&copy; 2023 Travel Circle. All rights reserved.</p>
-        </div>
-    </footer>
->>>>>>> b06dfb00e5d8acd24356d70c540c9cb8b06e404d
 
 </html>

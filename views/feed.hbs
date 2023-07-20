@@ -3,11 +3,14 @@
 
 <!-- Main section to display the feed -->
 <main class="feed">
+{{!-- Search Box --}}
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Search for a location">
         <button id="search-button">Search</button>
-    <div class="map"></div>
+{{!-- Map --}}
+    <div id="map"></div>
     <script src="/js/map.js"></script>
+{{!-- Weather --}}
     <div class="weather">
         <img src="{{weather_icon}}" alt="Weather Icon">
         <p>Location: {{location}}</p>
@@ -16,8 +19,6 @@
         <p>Humidity: {{humidity}} %</p>
         <p>Wind Speed: {{wind_speed}} mph</p>
     </div>
-    
-    <div id="map"></div>
-    <script src="/js/map.js"></script>
     <script src="/js/weather_el.js"></script>
+
 </main>
