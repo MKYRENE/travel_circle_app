@@ -15,6 +15,15 @@
   <title>Travel Circle</title>
   <!-- Mapbox CSS link -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+  <!-- Mapbox JS script -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+   <!-- Include the mapbox-gl-geocoder plugin -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.3/mapbox-gl-geocoder.css"
+    type="text/css"
+  />
   <!-- Custom CSS link -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -42,12 +51,11 @@
       {{/if}}
     </nav>
   </header>
+  
 
   <!-- The main content of the page, will be replaced by other templates -->
   {{{body}}}
 
-  <!-- Mapbox JS script -->
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
 
 </body>
 
@@ -66,10 +74,10 @@
       <a href="/about#team-contact">Contact</a>
     </div>
   </div>
-  <!-- Footer bottom -->
-  <div class="footer-bottom">
-    <p>&copy; 2023 Travel Circle. All rights reserved.</p>
-  </div>
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2023 Travel Circle. All rights reserved.</p>
+    </div>
 </footer>
 
 </html>

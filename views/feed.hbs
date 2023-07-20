@@ -3,10 +3,22 @@
 
 <!-- Main section to display the feed -->
 <main class="feed">
-    <!-- Loop through each feed item and display it -->
-    {{#each feed}}
-    <div class="map">
-        <!-- Display the content of each feed item here -->
+{{!-- Search Box --}}
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for a location">
+        <button id="search-button">Search</button>
+{{!-- Map --}}
+    <div id="map"></div>
+    <script src="/js/map.js"></script>
+{{!-- Weather --}}
+    <div class="weather">
+        <img src="{{weather_icon}}" alt="Weather Icon">
+        <p>Location: {{location}}</p>
+        <p>Date: {{date}}</p>
+        <p>Temperature: {{temperature}} °F</p>
+        <p>Humidity: {{humidity}} %</p>
+        <p>Wind Speed: {{wind_speed}} mph</p>
     </div>
-    {{/each}}
+    <script src="/js/weather_el.js"></script>
+
 </main>

@@ -158,10 +158,11 @@ ul li p {
     font-family: 'Oswald', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    color: #fff;
 }
 
 #team-info {
-    color: #fff;
+    color: #30193475;
     font-weight: 300;
 }
 
@@ -229,19 +230,20 @@ footer {
     align-items: center;
     /* Center content horizontally */
     background-color: #30193488;
-    width: 400px;
-    margin: 20px auto;
+    /* width: 400px; */
+    /* margin: 20px auto; */
     padding: 5px;
     border-radius: 5px;
     color: white;
 }
 
 .footer-container {
-    width: 400px;
+    width: 100%;
     margin: 20px auto;
     padding: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: space-between;
+    align-items: center;
     border-radius: 5px;
     color: white;
 }
@@ -279,4 +281,14 @@ footer {
     text-align: center;
     font-size: 12px;
     margin: 10px 0;
+}
+
+/* Override width for the dashboard form */
+form.dashboard-form {
+    width: 80%;
+}
+
+#map {
+    height: 500px;
+    width: 500px;
 }
