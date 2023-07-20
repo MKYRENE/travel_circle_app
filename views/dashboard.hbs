@@ -3,29 +3,6 @@
         <input name="date" type="date" placeholder="Date" required>
         <input name="city" type="text" placeholder="What city are you in?">
         <textarea name="text" placeholder="What did you do today?" rows="4" cols="50"></textarea>
-
         <button>Share</button>
     </form>
-
-    <div class="response">
-        {{#if date}}
-        <p>Date: {{date}}</p>
-        {{/if}}
-
-        {{#if city}}
-        <p>City: {{city}}</p>
-        {{/if}}
-
-        {{#if text}}
-        <p>{{text}}</p>
-        {{/if}}
-    </div>
 </main>
-
-<script>
-    // Reset the form after successful submission
-    const postForm = document.getElementById('postForm');
-    postForm.addEventListener('submit', () => {
-        postForm.reset();
-    });
-</script>
