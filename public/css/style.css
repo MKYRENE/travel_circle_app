@@ -294,3 +294,9 @@ form.dashboard-form {
     color: white;
     columns: 4;
 }
+
+
+.response {
+    background-color: #30193488;
+    color: white;
+}

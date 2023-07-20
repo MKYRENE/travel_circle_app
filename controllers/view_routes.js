@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
     res.render("index", {
         isHome: true,
         isLoggedIn: req.session.user_id,
+        posts: posts
     });
 });
 
@@ -75,6 +76,7 @@ router.get("/feed", isAuthenticated, async (req, res) => {
         isLoggedIn: true, // Adding isLoggedIn as true for logged-in users
         email: user.email,
         firstName: user.firstName,
+        username: user.username,       
         posts: posts,
     });
 });
@@ -87,6 +89,7 @@ router.get("/dashboard", isAuthenticated, async (req, res) => {
     });
 
     const posts = user.posts.map(t => t.get({ plain: true }));
+    const { date, city, text } = req.session.dashboardData || {};
 
     // The user IS logged in
     res.render("dashboard", {
@@ -94,7 +97,9 @@ router.get("/dashboard", isAuthenticated, async (req, res) => {
         isLoggedIn: true, // Adding isLoggedIn as true for logged-in users
         email: user.email,
         firstName: user.firstName,
-        posts: posts,
+        date,
+        city,
+        text
     });
 });
 
