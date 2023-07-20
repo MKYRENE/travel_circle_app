@@ -12,7 +12,7 @@ function isAuthenticated(req, res, next) {
 router.post("/post", isAuthenticated, async (req, res) => {
     try {
         const { text, date, city } = req.body;
-
+        console.log(req.body)
         // Create a new Post in the database with the provided text, date, city, and the user ID from the session
         await Post.create({
             text: req.body.text,

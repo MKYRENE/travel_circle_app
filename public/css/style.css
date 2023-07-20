@@ -285,7 +285,23 @@ form.dashboard-form {
 }
 
 /* For larger screens */
+/* For larger screens */
 #map {
+    height: 60vh;
+    /* 60% of the viewport height */
+    width: 80%;
+    /* 80% of the viewport width */
+    margin: 45px auto 0;
+}
+
+/* For smaller screens, e.g., mobile devices */
+@media screen and (max-width: 600px) {
+    #map {
+        height: 40vh;
+        /* 40% of the viewport height */
+        width: 90%;
+        /* 90% of the viewport width */
+    }
     height: 60vh;
     /* 60% of the viewport height */
     width: 80%;
@@ -309,13 +325,15 @@ form.dashboard-form {
     columns: 4;
 }
 
-
 .response {
     background-color: #301934ce;
     border-radius: 5px;
     color: white;
     margin-bottom: 25px;
     padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Styling the response text (h3) */
