@@ -17,9 +17,9 @@ router.get("/", async (req, res) => {
     let posts = await Post.findAll({
         include: User
     });
-
+    
     posts = posts.map(t => t.get({ plain: true }));
-
+    
     res.render("index", {
         isHome: true,
         isLoggedIn: req.session.user_id,
