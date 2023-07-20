@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const postForm = document.getElementById("postForm");
-    const dashboardLocationInput = document.getElementById("dashboardLocation");
-    const dashboardDateInput = document.getElementById("dashboardDate");
+    const dashboardLocationInput = document.getElementById("location");
+    const dashboardDateInput = document.getElementById("date");
 
     // Get the location and date values from the hidden input fields
     const location = dashboardLocationInput.value;
